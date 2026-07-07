@@ -159,10 +159,10 @@ if ( ! function_exists( 'hello_elementor_scripts_styles' ) ) {
 			);
 		}
 
-		// Enfileirar fontes Google Fonts (Epilogue e Jost)
+		// Enfileirar fontes Google Fonts (Epilogue, Jost, Poppins e Inter)
 		wp_enqueue_style(
 			'hello-elementor-google-fonts',
-			'https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap',
+			'https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&display=swap',
 			[],
 			null
 		);

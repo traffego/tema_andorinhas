@@ -453,3 +453,37 @@ h6.elementor-heading-title {
 	box-shadow: var(--shadow-button-hover) !important;
 }
 
+/* Support for Poppins and Inter (Modern Aasha Version) */
+.modern-version,
+.modern-version * {
+	--font-headings: 'Poppins', sans-serif;
+	--font-body: 'Inter', sans-serif;
+}
+
+.modern-version h1,
+.modern-version h2,
+.modern-version h3,
+.modern-version h4,
+.modern-version h5,
+.modern-version h6,
+.modern-version .elementor-heading-title {
+	font-family: 'Poppins', sans-serif !important;
+}
+
+.modern-version p,
+.modern-version span,
+.modern-version li,
+.modern-version a,
+.modern-version .elementor-text-editor {
+	font-family: 'Inter', sans-serif !important;
+}
+
+/* Ensure menu nativo in fixed header has Poppins font for modern version */
+#site-header.site-header .site-navigation a {
+	font-family: 'Poppins', sans-serif !important;
+	font-weight: 600 !important;
+	text-transform: uppercase;
+	font-size: 0.9rem;
+	letter-spacing: 0.5px;
+}
+
