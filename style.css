@@ -386,3 +386,70 @@ body {
 	}
 }
 
+/* Specific overrides for Elementor widgets to force theme colors and fonts */
+.elementor-widget-heading .elementor-heading-title,
+.elementor-heading-title,
+h1.elementor-heading-title,
+h2.elementor-heading-title,
+h3.elementor-heading-title,
+h4.elementor-heading-title,
+h5.elementor-heading-title,
+h6.elementor-heading-title {
+	font-family: 'Epilogue', sans-serif !important;
+	color: var(--color-primary) !important;
+	letter-spacing: -0.02em !important;
+}
+
+/* Force text and body elements to inherit Jost */
+.elementor-widget-text-editor,
+.elementor-text-editor,
+.elementor-text-editor p,
+.elementor-text-editor div,
+.elementor-text-editor li,
+.elementor-text-editor span {
+	font-family: 'Jost', sans-serif !important;
+	color: var(--color-black) !important;
+}
+
+/* Button overrides to ensure they match SITE_ANTIGO button formatting */
+.elementor-button,
+.elementor-button-wrapper .elementor-button {
+	font-family: 'Epilogue', sans-serif !important;
+	font-weight: 600 !important;
+	border-radius: 4px !important;
+	border-width: 2px !important;
+	border-style: solid !important;
+	padding: 0.6rem 1.2rem !important;
+	transition: var(--transition-smooth) !important;
+	box-shadow: var(--shadow-sm) !important;
+}
+
+.elementor-button:hover,
+.elementor-button:focus {
+	transform: translateY(-2px) !important;
+}
+
+.elementor-button:active {
+	transform: translateY(1px) !important;
+}
+
+/* Primary Button color overrides */
+.elementor-button.elementor-size-sm,
+.elementor-button.elementor-size-md,
+.elementor-button.elementor-size-lg,
+.elementor-button:not(.elementor-size-lg) {
+	background-color: var(--color-primary) !important;
+	border-color: var(--color-primary) !important;
+	color: #ffffff !important;
+}
+
+.elementor-button.elementor-size-sm:hover,
+.elementor-button.elementor-size-md:hover,
+.elementor-button.elementor-size-lg:hover,
+.elementor-button:not(.elementor-size-lg):hover {
+	background-color: var(--color-secondary) !important;
+	border-color: var(--color-secondary) !important;
+	color: #ffffff !important;
+	box-shadow: var(--shadow-button-hover) !important;
+}
+
