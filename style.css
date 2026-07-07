@@ -1,9 +1,9 @@
 /*
 	Theme Name: Tema Andorinhas
-	Theme URI: https://elementor.com/hello-theme/?utm_source=wp-themes&utm_campaign=theme-uri&utm_medium=wp-dash
-	Description: Hello Elementor is a lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor site builder plugin. The theme is free, open-source, and designed for users who want a flexible, easy-to-use, and customizable website. The theme, which is optimized for performance, provides a solid foundation for users to build their own unique designs using the Elementor drag-and-drop site builder. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.
-	Author: Elementor Team
-	Author URI: https://elementor.com/?utm_source=wp-themes&utm_campaign=author-uri&utm_medium=wp-dash
+	Theme URI: https://github.com/traffego/tema_andorinhas
+	Description: Tema personalizado Andorinhas Negócios Criativos, baseado no Hello Elementor.
+	Author: Andorinha Negócios Criativos
+	Author URI: https://github.com/traffego
 	Version: 3.4.9
 	Stable tag: 3.4.9
 	Requires at least: 6.0
@@ -11,53 +11,151 @@
 	Requires PHP: 7.4
 	License: GNU General Public License v3 or later.
 	License URI: https://www.gnu.org/licenses/gpl-3.0.html
-	Text Domain: hello-elementor
+	Text Domain: tema-andorinhas
 	Tags: accessibility-ready, flexible-header, custom-colors, custom-menu, custom-logo, featured-images, rtl-language-support, threaded-comments, translation-ready,
 */
 
 :root {
+	/* WordPress Color Palette Defaults */
 	--wp--preset--color--primary: #030a8c;
 	--wp--preset--color--secondary: #020873;
 	--wp--preset--color--black: #232323;
 	--wp--preset--color--white: #ffffff;
 	--wp--preset--color--light: #fafafa;
 
+	/* Custom variables */
 	--color-primary: #030a8c;
 	--color-secondary: #020873;
+	--color-primary-dark: #010437;
 	--color-black: #232323;
 	--color-white: #ffffff;
 	--color-light: #fafafa;
+	--color-accent: #020873;
+
+	/* Premium Gradients */
+	--gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+	--gradient-hover: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary-dark) 100%);
+	--gradient-glow: 0 0 20px rgba(3, 10, 140, 0.15);
+
+	/* Theme Shadows */
+	--shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+	--shadow-md: 0 8px 24px rgba(3, 10, 140, 0.06);
+	--shadow-lg: 0 16px 48px rgba(3, 10, 140, 0.12);
+	--shadow-button: 0 4px 14px rgba(3, 10, 140, 0.25);
+	--shadow-button-hover: 0 6px 20px rgba(3, 10, 140, 0.35);
+
+	/* Transitions */
+	--transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+	--transition-card: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Smooth Scrolling & Styling defaults */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--color-light);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--color-primary);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--color-secondary);
 }
 
 body {
 	font-family: 'Jost', sans-serif;
 	font-weight: 400;
-	line-height: 1.5;
+	line-height: 1.6;
 	color: var(--color-black);
 	background-color: var(--color-white);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
+/* Headings Upgrade */
 h1, h2, h3, h4, h5, h6,
 .display-1, .display-2, .display-3, .display-4, .display-5, .display-7 {
 	font-family: 'Epilogue', sans-serif;
 	font-weight: 700;
-	line-height: 1.1;
+	line-height: 1.2;
 	color: var(--color-primary);
+	letter-spacing: -0.02em;
 }
 
 /* Links */
 a {
 	color: var(--color-primary);
 	text-decoration: none;
-	transition: color 0.2s ease;
+	transition: var(--transition-smooth);
 }
 
 a:hover, a:focus {
-	color: #010437;
+	color: var(--color-secondary);
 	text-decoration: none;
 }
 
-/* Buttons Formatting (based on SITE_ANTIGO style) */
+/* Premium Card (For elementor cards/sections) */
+.premium-card,
+.elementor-element.premium-card > .elementor-widget-container {
+	background: var(--color-white);
+	border: 1px solid rgba(3, 10, 140, 0.05) !important;
+	box-shadow: var(--shadow-md) !important;
+	border-radius: 8px;
+	transition: var(--transition-card) !important;
+}
+
+.premium-card:hover,
+.elementor-element.premium-card:hover > .elementor-widget-container {
+	transform: translateY(-6px);
+	box-shadow: var(--shadow-lg) !important;
+	border-color: rgba(3, 10, 140, 0.15) !important;
+}
+
+/* Premium Text Gradients */
+.gradient-text {
+	background: var(--gradient-primary);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	display: inline-block;
+}
+
+/* Form Inputs Styling */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	width: 100%;
+	padding: 12px 16px;
+	border: 1px solid #e2e8f0;
+	border-radius: 6px;
+	background-color: #ffffff;
+	font-family: 'Epilogue', sans-serif;
+	font-size: 0.95rem;
+	color: var(--color-black);
+	transition: var(--transition-smooth);
+	box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+	outline: none;
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 3px rgba(3, 10, 140, 0.12);
+}
+
+/* Buttons (Premium upgrade) */
 .btn,
 .button,
 button,
@@ -66,29 +164,48 @@ input[type="button"],
 .elementor-button {
 	display: inline-block;
 	font-family: 'Epilogue', sans-serif;
-	font-weight: 500;
-	font-size: 1rem;
+	font-weight: 600;
+	font-size: 0.95rem;
 	line-height: 1.5;
 	text-align: center;
 	vertical-align: middle;
 	user-select: none;
-	padding: 0.6rem 1.2rem;
-	border-radius: 4px;
+	padding: 0.75rem 1.6rem;
+	border-radius: 6px;
 	border: 2px solid transparent;
-	transition: all 0.3s ease;
+	transition: var(--transition-smooth);
 	cursor: pointer;
-	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+	box-shadow: var(--shadow-sm);
+	position: relative;
+	overflow: hidden;
+}
+
+/* Hover translation micro-animation */
+.btn:hover,
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+.elementor-button:hover {
+	transform: translateY(-2px);
+}
+
+.btn:active,
+.button:active,
+button:active,
+input[type="submit"]:active,
+.elementor-button:active {
+	transform: translateY(1px);
 }
 
 /* Button Sizes */
 .btn-sm, .button-sm {
-	padding: 0.4rem 0.8rem;
-	font-size: 0.875rem;
+	padding: 0.5rem 1rem;
+	font-size: 0.85rem;
 }
 
 .btn-lg, .button-lg, .elementor-size-lg {
-	padding: 1rem 2.6rem !important;
-	font-size: 1.1rem;
+	padding: 1.1rem 2.8rem !important;
+	font-size: 1.05rem;
 }
 
 /* Primary Button style */
@@ -101,6 +218,7 @@ input[type="button"],
 	background-color: var(--color-primary) !important;
 	border-color: var(--color-primary) !important;
 	color: #ffffff !important;
+	box-shadow: var(--shadow-button);
 }
 
 .btn-primary:hover,
@@ -111,10 +229,10 @@ input[type="button"],
 .button-secondary:hover,
 .elementor-button.elementor-type-primary:hover,
 .elementor-button.elementor-type-secondary:hover {
-	background-color: #010437 !important;
-	border-color: #010437 !important;
+	background-color: var(--color-secondary) !important;
+	border-color: var(--color-secondary) !important;
 	color: #ffffff !important;
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2) !important;
+	box-shadow: var(--shadow-button-hover) !important;
 }
 
 /* Success / Black Button style */
@@ -134,7 +252,7 @@ input[type="submit"]:hover {
 	background-color: #000000 !important;
 	border-color: #000000 !important;
 	color: #ffffff !important;
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2) !important;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
 }
 
 /* Outline Buttons */
@@ -148,7 +266,7 @@ input[type="submit"]:hover {
 .btn-primary-outline:hover {
 	background-color: var(--color-primary) !important;
 	color: #ffffff !important;
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+	box-shadow: var(--shadow-button);
 }
 
 /* Menu items */
@@ -156,8 +274,12 @@ input[type="submit"]:hover {
 	font-family: 'Epilogue', sans-serif;
 	font-weight: 500;
 	color: var(--color-black);
+	padding: 8px 16px;
+	border-radius: 4px;
+	transition: var(--transition-smooth);
 }
 
 .site-navigation a:hover {
 	color: var(--color-primary);
+	background-color: rgba(3, 10, 140, 0.04);
 }
