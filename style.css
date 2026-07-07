@@ -283,3 +283,106 @@ input[type="submit"]:hover {
 	color: var(--color-primary);
 	background-color: rgba(3, 10, 140, 0.04);
 }
+
+/* Header Overrides to match Andorinhas reference site */
+#site-header.site-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: var(--color-white);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+	z-index: 9999;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 5%;
+	box-sizing: border-box;
+	transition: var(--transition-smooth);
+}
+
+#site-header .site-branding {
+	display: flex;
+	align-items: center;
+}
+
+#site-header .custom-logo-link img {
+	max-height: 80px;
+	width: auto;
+}
+
+#site-header .site-navigation {
+	display: flex;
+	align-items: center;
+}
+
+#site-header .site-navigation ul {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#site-header .site-navigation li {
+	margin: 0 15px;
+}
+
+#site-header .site-navigation a {
+	font-family: 'Epilogue', sans-serif;
+	font-weight: 500;
+	color: var(--color-black);
+	font-size: 1rem;
+	transition: var(--transition-smooth);
+	padding: 8px 12px;
+	border-radius: 4px;
+}
+
+#site-header .site-navigation a:hover {
+	color: var(--color-primary);
+	background-color: rgba(3, 10, 140, 0.04);
+}
+
+/* Adjust page content padding top to prevent being hidden by fixed header */
+body {
+	padding-top: 110px; /* Approximate height of fixed header */
+}
+
+/* Footer Overrides to match Andorinhas reference site */
+#site-footer.site-footer {
+	background-color: var(--color-black);
+	color: var(--color-white);
+	padding: 40px 20px;
+	text-align: center;
+	font-family: 'Epilogue', sans-serif;
+	font-size: 0.95rem;
+}
+
+#site-footer.site-footer a {
+	color: var(--color-white);
+	text-decoration: underline;
+}
+
+#site-footer.site-footer a:hover {
+	color: var(--color-light);
+}
+
+@media (max-width: 768px) {
+	#site-header.site-header {
+		padding: 10px 20px;
+		flex-direction: column;
+		text-align: center;
+	}
+	#site-header .site-navigation {
+		margin-top: 10px;
+	}
+	#site-header .site-navigation ul {
+		flex-direction: column;
+	}
+	#site-header .site-navigation li {
+		margin: 5px 0;
+	}
+	body {
+		padding-top: 180px; /* Increased padding top for mobile stacked header */
+	}
+}
+
