@@ -1,0 +1,9 @@
+node_modules/
+.env
+data/auth_info/
+.gemini/
+brain/
+walkthrough.md
+implementation_plan.md
+task.md
+analise_tema.md

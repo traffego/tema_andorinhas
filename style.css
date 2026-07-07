@@ -1,0 +1,163 @@
+/*
+	Theme Name: Hello Elementor
+	Theme URI: https://elementor.com/hello-theme/?utm_source=wp-themes&utm_campaign=theme-uri&utm_medium=wp-dash
+	Description: Hello Elementor is a lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor site builder plugin. The theme is free, open-source, and designed for users who want a flexible, easy-to-use, and customizable website. The theme, which is optimized for performance, provides a solid foundation for users to build their own unique designs using the Elementor drag-and-drop site builder. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.
+	Author: Elementor Team
+	Author URI: https://elementor.com/?utm_source=wp-themes&utm_campaign=author-uri&utm_medium=wp-dash
+	Version: 3.4.9
+	Stable tag: 3.4.9
+	Requires at least: 6.0
+	Tested up to: 6.8
+	Requires PHP: 7.4
+	License: GNU General Public License v3 or later.
+	License URI: https://www.gnu.org/licenses/gpl-3.0.html
+	Text Domain: hello-elementor
+	Tags: accessibility-ready, flexible-header, custom-colors, custom-menu, custom-logo, featured-images, rtl-language-support, threaded-comments, translation-ready,
+*/
+
+:root {
+	--wp--preset--color--primary: #030a8c;
+	--wp--preset--color--secondary: #020873;
+	--wp--preset--color--black: #232323;
+	--wp--preset--color--white: #ffffff;
+	--wp--preset--color--light: #fafafa;
+
+	--color-primary: #030a8c;
+	--color-secondary: #020873;
+	--color-black: #232323;
+	--color-white: #ffffff;
+	--color-light: #fafafa;
+}
+
+body {
+	font-family: 'Jost', sans-serif;
+	font-weight: 400;
+	line-height: 1.5;
+	color: var(--color-black);
+	background-color: var(--color-white);
+}
+
+h1, h2, h3, h4, h5, h6,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-7 {
+	font-family: 'Epilogue', sans-serif;
+	font-weight: 700;
+	line-height: 1.1;
+	color: var(--color-primary);
+}
+
+/* Links */
+a {
+	color: var(--color-primary);
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+a:hover, a:focus {
+	color: #010437;
+	text-decoration: none;
+}
+
+/* Buttons Formatting (based on SITE_ANTIGO style) */
+.btn,
+.button,
+button,
+input[type="submit"],
+input[type="button"],
+.elementor-button {
+	display: inline-block;
+	font-family: 'Epilogue', sans-serif;
+	font-weight: 500;
+	font-size: 1rem;
+	line-height: 1.5;
+	text-align: center;
+	vertical-align: middle;
+	user-select: none;
+	padding: 0.6rem 1.2rem;
+	border-radius: 4px;
+	border: 2px solid transparent;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Button Sizes */
+.btn-sm, .button-sm {
+	padding: 0.4rem 0.8rem;
+	font-size: 0.875rem;
+}
+
+.btn-lg, .button-lg, .elementor-size-lg {
+	padding: 1rem 2.6rem !important;
+	font-size: 1.1rem;
+}
+
+/* Primary Button style */
+.btn-primary,
+.button-primary,
+.btn-secondary,
+.button-secondary,
+.elementor-button.elementor-type-primary,
+.elementor-button.elementor-type-secondary {
+	background-color: var(--color-primary) !important;
+	border-color: var(--color-primary) !important;
+	color: #ffffff !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.button-primary:hover,
+.button-primary:focus,
+.btn-secondary:hover,
+.button-secondary:hover,
+.elementor-button.elementor-type-primary:hover,
+.elementor-button.elementor-type-secondary:hover {
+	background-color: #010437 !important;
+	border-color: #010437 !important;
+	color: #ffffff !important;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Success / Black Button style */
+.btn-success,
+.btn-black,
+.button-black,
+input[type="submit"] {
+	background-color: var(--color-black) !important;
+	border-color: var(--color-black) !important;
+	color: #ffffff !important;
+}
+
+.btn-success:hover,
+.btn-black:hover,
+.button-black:hover,
+input[type="submit"]:hover {
+	background-color: #000000 !important;
+	border-color: #000000 !important;
+	color: #ffffff !important;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Outline Buttons */
+.btn-primary-outline {
+	background-color: transparent !important;
+	border-color: var(--color-primary) !important;
+	color: var(--color-primary) !important;
+	box-shadow: none;
+}
+
+.btn-primary-outline:hover {
+	background-color: var(--color-primary) !important;
+	color: #ffffff !important;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Menu items */
+.site-navigation a {
+	font-family: 'Epilogue', sans-serif;
+	font-weight: 500;
+	color: var(--color-black);
+}
+
+.site-navigation a:hover {
+	color: var(--color-primary);
+}
